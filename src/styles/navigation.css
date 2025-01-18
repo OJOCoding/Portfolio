@@ -1,0 +1,30 @@
+.navbar-toolbar {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    top: 5rem;
+}
+
+.navbar-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10rem;
+    align-items: center;
+    font-family: 'Inconsolata';
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-link:hover {
+    text-decoration: underline;
+}
+
+.navbar-logo {
+    height: 3rem;
+}
+
