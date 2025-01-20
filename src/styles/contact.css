@@ -1,0 +1,124 @@
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 10rem auto;
+    font-family: Arial, sans-serif;
+}
+
+.contact-container h2 {
+    margin-bottom: 20px; /* Add some spacing below the header */
+    font-family: 'Inconsolata';
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.contact-form {
+    flex: none; /* Prevent stretching in column layout */
+    width: 100%; /* Ensure the form spans full width of container */
+    max-width: 800px; /* Optional: Limit form width */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icons {
+    flex: none; /* Prevent stretching in column layout */
+    width: 100%; /* Ensure icons span full width of container */
+    max-width: 800px; /* Optional: Limit icons width */
+    display: flex;
+    justify-content: center; /* Center align icons horizontally */
+    gap: 20px;
+}
+  
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    background-color: #515151;
+    color: #fff;
+  }
+  
+  /* Form Section */
+  .contact-form {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .contact-form button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #515151;
+  }
+  
+  /* Status Message */
+  .status-message {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .status-message.success {
+    color: green;
+  }
+  
+  .status-message.error {
+    color: red;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .social-icons {
+      flex-direction: row;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+  

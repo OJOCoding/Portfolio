@@ -1,7 +1,7 @@
 "use client";
 
 import Spline from "@splinetool/react-spline";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../styles/home.css";
 
 // Slogans for the typewriter effect
@@ -14,9 +14,9 @@ const slogans: string[] = [
 ];
 
 const Home: React.FC = () => {
-  const [currentLine, setCurrentLine] = useState<string>("");
-  const [charIndex, setCharIndex] = useState<number>(0);
-  const [currentIndex, setCurrentIndex] = useState<number>(-1);
+  const [currentLine, setCurrentLine] = useState<string>(""); // Current line for typewriter effect
+  const [currentIndex, setCurrentIndex] = useState<number>(-1); // Current index for the slogan
+  const timeoutRef = useRef<number | null>(null); // Ref to store timeout ID for cleanup
 
   // Random index selection avoiding immediate repeats
   const getRandomIndex = (exclude: number): number => {
@@ -31,23 +31,31 @@ const Home: React.FC = () => {
   const typeLine = (line: string, index: number) => {
     if (index < line.length) {
       setCurrentLine((prev) => prev + line.charAt(index));
-      setTimeout(() => typeLine(line, index + 1), 100); // Typing speed
+      timeoutRef.current = window.setTimeout(() => typeLine(line, index + 1), 100); // Typing speed
     } else {
-      setTimeout(() => startTyping(), 2000); // Pause before next slogan
+      timeoutRef.current = window.setTimeout(() => startTyping(), 2000); // Pause before next slogan
     }
   };
 
   // Start typing a new slogan
   const startTyping = () => {
-    setCurrentLine("");
-    const newIndex = getRandomIndex(currentIndex);
-    setCurrentIndex(newIndex);
-    typeLine(slogans[newIndex], 0);
+    setCurrentLine(""); // Reset current line
+    const newIndex = getRandomIndex(currentIndex); // Get a new slogan index
+    setCurrentIndex(newIndex); // Update current index
+    typeLine(slogans[newIndex], 0); // Start typing the selected slogan
   };
 
+  // Effect to start the typewriter animation on mount
   useEffect(() => {
     startTyping();
-  }, []);
+
+    // Cleanup function to clear timeouts if the component unmounts
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current); // Clear any ongoing timeout
+      }
+    };
+  }, []); // Empty dependency array to run on mount only
 
   return (
     <main className="home-container">
