@@ -6,16 +6,16 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Email } from "@mui/icons-material";
-
+import Image from 'next/image';
 
 const About = () => {
   return (
     <main className="about">
-      <div className="profile"><img src="ONI.svg" alt="Oni Luca | Open Peeps Illustration" /></div>
+      <div className="profile"><Image src="ONI.svg" alt="Oni Luca | Open Peeps Illustration" width={500} height={500} /></div>
       <div className="about-section">
-        <h1>Hello, again it's Oni.</h1>
-        <p>Hi, I'm Oni Luca!
-        I'm a web developer and designer specializing in creating engaging, accessible, and visually striking user experiences. With a background in computer science and a keen eye for UI/UX design, I blend creativity with functionality to build seamless digital solutions. Beyond design, I have interests in AI, databases, data science, and programming, making me a well-rounded tech enthusiast. Explore my work and join me on my journey of crafting innovative and user-friendly web applications!</p>
+        <h1>Hello, again it&apos;s Oni.</h1>
+        <p>Hi, I&apos;m Oni Luca!
+        I&apos;m a web developer and designer specializing in creating engaging, accessible, and visually striking user experiences. With a background in computer science and a keen eye for UI/UX design, I blend creativity with functionality to build seamless digital solutions. Beyond design, I have interests in AI, databases, data science, and programming, making me a well-rounded tech enthusiast. Explore my work and join me on my journey of crafting innovative and user-friendly web applications!</p>
         <div className="social-icons">
           <a
             href="https://github.com/OJOCODING"

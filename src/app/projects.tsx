@@ -26,7 +26,6 @@ import {
   faNodeJs,
   faFigma,
 } from "@fortawesome/free-brands-svg-icons";
-import { text } from "stream/consumers";
 
 const skills = [
   { name: "CSS3", icon: <FontAwesomeIcon icon={faCss3Alt} /> },
@@ -66,7 +65,7 @@ const skills = [
 ];
 
 const Projects = () => {
-  const [repos, setRepos] = useState<any[]>([]);
+  const [repos, setRepos] = useState<RepoType[]>([]);
   const [loading, setLoading] = useState(true);
   const [sorter, setSorter] = useState("name");
 
@@ -91,7 +90,7 @@ const Projects = () => {
           Welcome to My Projects
         </Typography>
         <Typography variant="h6">
-          Here you'll find a collection of my skills and projects showcasing my
+          Here you&apos;ll find a collection of my skills and projects showcasing my
           expertise and creativity.
         </Typography>
       </Box>
@@ -113,7 +112,7 @@ const Projects = () => {
           <Card sx={{ display: "flex", flexDirection: "column", height: 550 }}>
             <CardMedia
               component="img"
-              sx={{ height: 220 }} // Adjust the height of the image
+              sx={{ height: 250 }} // Adjust the height of the image
               image="/AequitasOB.png"
               alt="Project 1 Thumbnail"
             />
@@ -123,7 +122,7 @@ const Projects = () => {
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Aequitas is a groundbreaking project designed as part of a
-                bachelor's thesis to optimize the online banking experience. The
+                bachelor&apos;s thesis to optimize the online banking experience. The
                 platform emphasizes inclusivity, accessibility, and security,
                 offering an equitable digital banking environment for all users,
                 including senior citizens and individuals with disabilities.
@@ -140,17 +139,17 @@ const Projects = () => {
           <Card sx={{ display: "flex", flexDirection: "column", height: 550 }}>
             <CardMedia
               component="img"
-              sx={{ height: 220 }} // Adjust the height of the image
+              sx={{ height: 250 }} // Adjust the height of the image
               image="/Vinnie'sT.png"
               alt="Project 2 Thumbnail"
             />
             <CardContent>
               <Typography variant="h5" gutterBottom>
-                The Vinnie's Trattoria Suite
+                The Vinnie&apos;s Trattoria Suite
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                The Vinnie's Trattoria Suite began as a static website project,
-                showcasing the restaurant's branding through a clean, responsive
+                The Vinnie&apos;s Trattoria Suite began as a static website project,
+                showcasing the restaurant&apos;s branding through a clean, responsive
                 design. It then evolved into a dynamic platform featuring
                 customer reviews, blogs, and an administration side for
                 efficient content and menu management. Finally, it further
@@ -168,7 +167,7 @@ const Projects = () => {
           <Card sx={{ display: "flex", flexDirection: "column", height: 550 }}>
             <CardMedia
               component="img"
-              sx={{ height: 225 }} // Adjust the height of the image
+              sx={{ height: 250 }} // Adjust the height of the image
               image="/Portfolio.png"
               alt="Project 3 Thumbnail"
             />
@@ -289,5 +288,18 @@ const Projects = () => {
     </main>
   );
 };
+
+interface RepoType {
+  id: number;
+  name: string;
+  html_url: string;
+  description: string;
+  stargazers_count: number;
+  forks_count: number;
+  owner: {
+    login: string;
+  };
+  default_branch: string;
+}
 
 export default Projects;

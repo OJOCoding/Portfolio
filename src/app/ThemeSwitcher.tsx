@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { IconButton, useTheme } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
 
 const ThemeSwitcher = () => {

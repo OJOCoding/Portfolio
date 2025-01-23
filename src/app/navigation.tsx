@@ -2,6 +2,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import Image from 'next/image';
 import '../styles/navigation.css';
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/">
-              <img src="OJO.png" alt="Logo" className="navbar-logo" />
+              <Image src="/OJO.png" alt="Logo" width={80} height={48} className="navbar-logo" />
             </Link>
           </li>
           <li>

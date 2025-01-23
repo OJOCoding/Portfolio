@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     document.querySelectorAll('.codedText').forEach((t) => {
       const arr1 = t.innerHTML.split('');
-      const arr2: any[] = [];
+      const arr2: string[] = []; // Specify a different type
       arr1.forEach((char, i) => arr2[i] = randChar()); // fill arr2 with random characters
       (t as HTMLElement).onpointerover = () => {
         const tl = gsap.timeline();
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
       </div>
 
       <footer className="footer">
-        &copy; 2025 Oni Luca | All Rights Reserved | I honestly don't know what to put here &lt;3
+        &copy; 2025 Oni Luca | All Rights Reserved | I honestly don&apos;t know what to put here &lt;3
       </footer>
     </main>
   );
