@@ -12,19 +12,54 @@
     margin: 0;
     gap: 10rem;
     align-items: center;
-    font-family: 'Inconsolata';
+    font-family: 'Macondo';
 }
 
 .navbar-link {
     text-decoration: none;
-    color: black;
+    color: var(--primary-text);
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: inline-block;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background-color: var(--primary-bg); /* Base background color */
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: background-color 0.3s ease;
 }
 
 .navbar-link:hover {
-    text-decoration: underline;
+    background-color: var(--primary-text); /* Inverted background */
+    color: var(--primary-bg);  /* Ensure contrasting text color */
+}
+
+.navbar-link:hover::before {
+    background-color: var(--primary-bg); /* Inverted pill background */
 }
 
 .navbar-logo {
     height: 3rem;
+    transition: filter 0.3s ease; /* Smooth transition for theme change */
 }
 
+/* Light theme - Default */
+[data-theme="light"] .navbar-logo {
+    filter: invert(0); /* Normal logo */
+}
+
+/* Dark theme */
+[data-theme="dark"] .navbar-logo {
+    filter: invert(1); /* Inverted colors for logo */
+}

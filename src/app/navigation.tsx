@@ -11,12 +11,7 @@ const Navbar = () => {
         <Box component="ul" className="navbar-list">
           <li>
             <Link to="/about" className="navbar-link">
-              <Typography variant="h5">ABOUT ME</Typography>
-            </Link>
-          </li>
-          <li>
-            <Link to="/skills" className="navbar-link">
-              <Typography variant="h5">SKILLS</Typography>
+              <Typography variant="h5">WHO AM I?</Typography>
             </Link>
           </li>
           <li>
@@ -26,12 +21,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/projects" className="navbar-link">
-              <Typography variant="h5">PROJECTS</Typography>
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="navbar-link">
-              <Typography variant="h5">CONTACTS</Typography>
+              <Typography variant="h5">WHAT DO I DO?</Typography>
             </Link>
           </li>
         </Box>

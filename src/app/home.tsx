@@ -1,70 +1,58 @@
-"use client";
-
 import Spline from "@splinetool/react-spline";
-import { useState, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import "../styles/home.css";
-
-// Slogans for the typewriter effect
-const slogans: string[] = [
-  "Crafting Clean Code, Designing Seamless Experiences.",
-  "Empowering the Web with Smart Code and Thoughtful UI/UX.",
-  "Building Bold Ideas with AI, Data, and Accessible Design.",
-  "Driven by Design, Powered by Code—Exploring AI and Data Science.",
-  "Turning Ideas into Reality—Blending Code, Design, and Innovation.",
-];
+import { gsap } from "gsap";
 
 const Home: React.FC = () => {
-  const [currentLine, setCurrentLine] = useState<string>(""); // Current line for typewriter effect
-  const [currentIndex, setCurrentIndex] = useState<number>(-1); // Current index for the slogan
-  const timeoutRef = useRef<number | null>(null); // Ref to store timeout ID for cleanup
 
-  // Random index selection avoiding immediate repeats
-  const getRandomIndex = (exclude: number): number => {
-    let index: number;
-    do {
-      index = Math.floor(Math.random() * slogans.length);
-    } while (index === exclude);
-    return index;
-  };
-
-  // Typing effect handler
-  const typeLine = (line: string, index: number) => {
-    if (index < line.length) {
-      setCurrentLine((prev) => prev + line.charAt(index));
-      timeoutRef.current = window.setTimeout(() => typeLine(line, index + 1), 100); // Typing speed
-    } else {
-      timeoutRef.current = window.setTimeout(() => startTyping(), 2000); // Pause before next slogan
-    }
-  };
-
-  // Start typing a new slogan
-  const startTyping = () => {
-    setCurrentLine(""); // Reset current line
-    const newIndex = getRandomIndex(currentIndex); // Get a new slogan index
-    setCurrentIndex(newIndex); // Update current index
-    typeLine(slogans[newIndex], 0); // Start typing the selected slogan
-  };
-
-  // Effect to start the typewriter animation on mount
   useEffect(() => {
-    startTyping();
+    document.querySelectorAll('.codedText').forEach((t) => {
+      const arr1 = t.innerHTML.split('');
+      const arr2: any[] = [];
+      arr1.forEach((char, i) => arr2[i] = randChar()); // fill arr2 with random characters
+      (t as HTMLElement).onpointerover = () => {
+        const tl = gsap.timeline();
+        let step = 0;
+        tl.fromTo(t, {
+          innerHTML: arr2.join(''),
+         
+        }, {
+          duration: arr1.length / 10, // slower duration based on text length
+          ease: 'power4.in',
+          delay: 0.1,
+          onUpdate: () => {
+            const p = Math.floor(tl.progress() * (arr1.length)); // whole number from 0 - text length
+            if (step !== p) { // throttle the change of random characters
+              step = p;
+              arr1.forEach((char, i) => arr2[i] = randChar());
+              let pt1 = arr1.join('').substring(p, 0),
+                  pt2 = arr2.join('').substring(arr2.length - p, 0);
+              if (t.classList.contains('fromRight')) {
+                pt1 = arr2.join('').substring(arr2.length - p, 0);
+                pt2 = arr1.join('').substring(arr1.length - p);
+              }
+              t.innerHTML = pt1 + pt2; // update text
+            }
+          }
+        });
+      };
+    });
 
-    // Cleanup function to clear timeouts if the component unmounts
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current); // Clear any ongoing timeout
-      }
-    };
-  }, []); // Empty dependency array to run on mount only
+    function randChar() {
+      let c = "abcdefghijklmnopqrstuvwxyz1234567890!@#$^&*()…æ_+-=;[]/~`";
+      c = c[Math.floor(Math.random() * c.length)];
+      return (Math.random() > 0.5) ? c : c.toUpperCase();
+    }
+  }, []);
 
   return (
     <main className="home-container">
-      <div className="tittle-container">
-        <h1>ONI LUCA</h1>
-        <h2>
-          {currentLine}
-          <span className="blinking-cursor">|</span>
-        </h2>
+      <div className="title-container">
+        <h1 className="codedText">ONI LUCA</h1>
+        <h3 id="text-effect" >
+          Empowering People Through Thoughtful Design,
+          Advancing Technology Through Innovative Development.
+        </h3>
       </div>
       <div className="spline-container">
         <Spline
@@ -73,7 +61,7 @@ const Home: React.FC = () => {
         />
         <div className="bg-box"></div>
       </div>
-      
+
       <footer className="footer">
         &copy; 2025 Oni Luca | All Rights Reserved | I honestly don't know what to put here &lt;3
       </footer>

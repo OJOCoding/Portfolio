@@ -2,15 +2,58 @@
 
 import React from "react";
 import "../styles/about.css";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { Email } from "@mui/icons-material";
+
 
 const About = () => {
   return (
-    <main>
+    <main className="about">
       <div className="profile"><img src="ONI.svg" alt="Oni Luca | Open Peeps Illustration" /></div>
       <div className="about-section">
         <h1>Hello, again it's Oni.</h1>
-      <p>As much as I want to write something interesting, I am feeling kinda lazy so here is lorem ipsum instead.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa voluptates quis obcaecati soluta, ut quo necessitatibus laboriosam dolorem ipsum fugit, reprehenderit unde sed accusamus quae, est sunt magnam nisi! Qui?
-      </p> 
+        <p>Hi, I'm Oni Luca!
+        I'm a web developer and designer specializing in creating engaging, accessible, and visually striking user experiences. With a background in computer science and a keen eye for UI/UX design, I blend creativity with functionality to build seamless digital solutions. Beyond design, I have interests in AI, databases, data science, and programming, making me a well-rounded tech enthusiast. Explore my work and join me on my journey of crafting innovative and user-friendly web applications!</p>
+        <div className="social-icons">
+          <a
+            href="https://github.com/OJOCODING"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
+          >
+            <GitHubIcon />
+            <span className="tooltip">https://github.com/OJOCODING</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/oniluca"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
+          >
+            <LinkedInIcon />
+            <span className="tooltip">https://www.linkedin.com/in/oniluca</span>
+          </a>
+          <a
+            href="https://www.instagram.com/oniluca"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram Profile"
+          >
+            <InstagramIcon />
+            <span className="tooltip">https://www.instagram.com/oniluca</span>
+          </a>
+          <a
+            href="mailto:oniluca@ymail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Email Oni Luca"
+          >
+            <Email />
+            <span className="tooltip">oniluca@ymail.com</span>
+          </a>
+      </div>
       </div>
     </main>
   );
