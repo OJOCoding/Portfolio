@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import "../styles/projects.css";
+import "../../styles/projects.css";
 import {
   Box,
   Typography,

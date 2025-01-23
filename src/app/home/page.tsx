@@ -1,6 +1,7 @@
+"use client";
 import Spline from "@splinetool/react-spline";
 import { useEffect } from "react";
-import "../styles/home.css";
+import "../../styles/home.css";
 import { gsap } from "gsap";
 
 const Home: React.FC = () => {
