@@ -1,10 +1,4 @@
-.spline-container {
-    flex: 0 0 50%;
-    margin-top: -2.5rem;
-}
-
-/* home.css */
-
+/* General styles */
 body.home {
     overflow: hidden;
     font-family: 'Inconsolata';
@@ -34,15 +28,23 @@ body.home {
 .title-container h1 {
     font-size: 7rem;
     margin: 0;
+    word-wrap: break-word; /* Ensure text breaks on smaller screens */
 }
 
 .title-container h3 {
     font-size: 3rem;
     opacity: 0.7;
     margin: 0;
+    word-wrap: break-word; /* Ensure text wraps properly */
 }
 
-/* Im broke */
+/* Spline container */
+.spline-container {
+    flex: 0 0 50%;
+    margin-top: -2.5rem;
+}
+
+/* Background box */
 .bg-box {
     position: absolute;
     bottom: 1rem;
@@ -54,6 +56,7 @@ body.home {
     z-index: 1;
 }
 
+/* Footer styles */
 .footer {
     position: fixed;
     bottom: 0;
@@ -67,4 +70,41 @@ body.home {
 .footer:hover {
     color: var(--primary-text);
 }
+.heart{
+    display: none;
+}
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
 
+    .title-container {
+        flex: 0 0 auto;
+        padding-left: 0;
+        margin-top: 5rem;
+        text-align: center; /* Center text on mobile */
+    }
+
+    .heart{
+        display: block;
+    }
+
+    .title-container h1 {
+        font-size: 3.5rem; /* Adjust size for smaller screens */
+    }
+
+    .title-container h3 {
+        font-size: 1.5rem; /* Adjust size for smaller screens */
+    }
+
+    .spline-container {
+        display: none; /* Hide the Spline model */
+    }
+
+    .footer {
+        display: none; /* Hide the footer on mobile */
+    }
+}

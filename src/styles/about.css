@@ -104,3 +104,55 @@ a:hover .tooltip {
     transform: translateX(-50%) translateY(-5px);
     /* Slightly raises the tooltip on hover */
 }
+
+/* Mobile-specific styling */
+@media (max-width: 768px) {
+    body.about {
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+    main.about {
+        flex-direction: column; /* Stack the content vertically */
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2rem;
+        height: auto; /* Allow content to expand */
+    }
+
+    .profile {
+        flex: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem; /* Space between profile and about-section */
+    }
+
+    .profile img {
+        width: 80%; /* Adjust profile image size */
+        margin: 0; /* Center the image */
+    }
+
+    .about-section {
+        margin: 0;
+        padding: 0 1rem; /* Add some padding for readability */
+        text-align: center; /* Center align text on mobile */
+    }
+
+    .about-section h1 {
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .about-section p {
+        font-size: 1.2rem;
+        padding: 0; /* Remove large right padding */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center the icons */
+        gap: 15px; /* Reduce gap between icons */
+    }
+
+    .social-icons .tooltip {
+        display: none; /* Hide tooltips completely */
+    }
+}

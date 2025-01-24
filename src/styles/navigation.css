@@ -64,3 +64,35 @@
 [data-theme="dark"] .navbar-logo {
     filter: invert(1); /* Inverted colors for logo */
 }
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .navbar-list {
+        flex-direction: row;
+        height: 1rem;
+        justify-content: space-around;
+        gap: 3rem; /* Adjust spacing for mobile view */
+    }
+
+    /* Hide text on mobile */
+    .navbar-link span {
+        display: none;
+    }
+
+    /* Show icons only on mobile */
+    .navbar-link svg {
+        display: inline-block;
+        font-size: 2.5rem; /* Slightly larger icons */
+    }
+}
+
+/* Desktop view - Show text and hide icons */
+@media (min-width: 769px) {
+    .navbar-link span {
+        display: inline; /* Show text on desktop */
+    }
+
+    .navbar-link svg {
+        display: none; /* Hide icons */
+    }
+}

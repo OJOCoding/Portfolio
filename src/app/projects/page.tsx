@@ -99,7 +99,7 @@ const Projects = () => {
       <br />
       <br />
       {/* Selected Projects Section */}
-      <Box sx={{ marginBottom: 4 }}>
+      <Box id="selected-projects" sx={{ marginBottom: 4 }}>
         <Typography variant="h3" gutterBottom textAlign={"center"}>
           Featured Projects
         </Typography>

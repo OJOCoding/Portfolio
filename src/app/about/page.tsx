@@ -27,7 +27,7 @@ const About = () => {
             <span className="tooltip">https://github.com/OJOCODING</span>
           </a>
           <a
-            href="https://www.linkedin.com/in/oniluca"
+           href="https://www.linkedin.com/in/oniluca"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
