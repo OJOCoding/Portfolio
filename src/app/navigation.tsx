@@ -21,7 +21,7 @@ const Navbar = () => {
           <li>
             <Link href="/" aria-label="Home">
               <Image
-                src="/OJO.png"                alt="Logo"
+                src="/Portfolio/OJO.png"                alt="Logo"
                 width={80}
                 height={48}
                 className="navbar-logo"

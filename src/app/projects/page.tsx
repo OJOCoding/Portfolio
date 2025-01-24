@@ -114,7 +114,7 @@ const Projects = () => {
           <Card sx={{ display: "flex", flexDirection: "column", height: 550 }}>
             <div style={{ position: "relative", height: 250, width: "100%" }}>
               <Image
-                src="/AequitasOB.png"
+                src="/Portfolio/AequitasOB.png"
                 alt="Project 1 Thumbnail"
                 layout="fill"
                 objectFit="cover"
@@ -144,8 +144,8 @@ const Projects = () => {
           <Card sx={{ display: "flex", flexDirection: "column", height: 550 }}>
           <div style={{ position: "relative", height: 250, width: "100%" }}>
               <Image
-                src="/Vinnie.png"
-                alt="Project 1 Thumbnail"
+                src="/Portfolio/Vinnie.png"
+                alt="Project 2 Thumbnail"
                 layout="fill"
                 objectFit="cover"
                 quality={100}
@@ -175,7 +175,7 @@ const Projects = () => {
           <Card sx={{ display: "flex", flexDirection: "column", height: 550 }}>
           <div style={{ position: "relative", height: 250, width: "100%" }}>
               <Image
-                src="/Portfolio.png"
+                src="/Portfolio/Portfolio.png"
                 alt="Project 3 Thumbnail"
                 layout="fill"
                 objectFit="cover"
@@ -187,7 +187,7 @@ const Projects = () => {
                 This portfolio project
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                A portfolio project showcasing my skills and projects.
+              Welcome to my portfolio! This website is built with Next.js and deployed on GitHub Pages, combining server-side rendering, dynamic routing, and responsive design to create a modern and seamless user experience. It&apos;s more than just a showcase of my work—it&apos;s a reflection of my dedication to coding, creativity, and continuous improvement. Each page is thoughtfully designed to highlight my skills, share my journey, and connect with others who share a passion for technology and innovation.
               </Typography>
             </CardContent>
           </Card>
