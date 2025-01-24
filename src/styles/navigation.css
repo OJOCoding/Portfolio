@@ -12,7 +12,8 @@
     margin: 0;
     gap: 10rem;
     align-items: center;
-    font-family: 'Macondo';
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
 }
 
 .navbar-link {
@@ -33,7 +34,7 @@
     left: 50%;
     width: 200%;
     height: 200%;
-    background-color: var(--primary-bg); /* Base background color */
+    background-color: var(--primary-bg);
     border-radius: 50px;
     transform: translate(-50%, -50%);
     z-index: -1;

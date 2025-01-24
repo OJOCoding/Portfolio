@@ -1,36 +1,43 @@
 "use client";
-
 import React from "react";
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
-import Link from "next/link"; // Use Next.js Link component
+import { AppBar, Toolbar, Box } from "@mui/material";
+import Link from "next/link";
 import Image from "next/image";
-import styles from "../styles/navigation.module.css"; // Import CSS module
+import "../styles/navigation.css"; // Ensure the CSS file is correctly linked
 
 const Navbar = () => {
   return (
     <AppBar position="static" color="transparent" elevation={0}>
-      <Toolbar className={styles.navbarToolbar}>
-        <Box component="ul" className={styles.navbarList}>
+      <Toolbar className="navbar-toolbar">
+        <Box component="ul" className="navbar-list">
+          {/* "Who am I" Link */}
           <li>
-            <Link href="/about" className={styles.navbarLink}>
-              <Typography variant="h5">WHO AM I?</Typography>
+            <Link href="/about" className="navbar-link" aria-label="Who am I?">
+              WHO AM I?
             </Link>
           </li>
+
+          {/* Logo in the center */}
           <li>
-            <Link href="/" passHref>
+            <Link href="/" aria-label="Home">
               <Image
                 src="/OJO.png"
                 alt="Logo"
                 width={80}
                 height={48}
-                className={styles.navbarLogo}
-                priority
+                className="navbar-logo"
               />
             </Link>
           </li>
+
+          {/* "What do I do" Link */}
           <li>
-            <Link href="/projects" className={styles.navbarLink}>
-              <Typography variant="h5">WHAT DO I DO?</Typography>
+            <Link
+              href="/projects"
+              className="navbar-link"
+              aria-label="What do I do?"
+            >
+              WHAT DO I DO?
             </Link>
           </li>
         </Box>

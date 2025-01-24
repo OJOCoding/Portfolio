@@ -1,7 +1,10 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Navigation from "./navigation";
+import ThemeSwitcher from "./ThemeSwitcher";
+import BodyClassManager from "./BodyClassManager";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -41,7 +44,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="ltr">
-      <body className={`${inter.variable}`}>{children}</body>
+      <body className={`${inter.variable}`}>
+        <Navigation />
+        <ThemeSwitcher />
+        <BodyClassManager />
+        {children}
+      </body>
     </html>
   );
 }
