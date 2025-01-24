@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
+
 import "../../styles/projects.css";
 import {
   Box,
@@ -90,8 +92,8 @@ const Projects = () => {
           Welcome to My Projects
         </Typography>
         <Typography variant="h6">
-          Here you&apos;ll find a collection of my skills and projects showcasing my
-          expertise and creativity.
+          Here you&apos;ll find a collection of my skills and projects
+          showcasing my expertise and creativity.
         </Typography>
       </Box>
       <br />
@@ -110,24 +112,27 @@ const Projects = () => {
         >
           {/* Project 1 */}
           <Card sx={{ display: "flex", flexDirection: "column", height: 550 }}>
-            <CardMedia
-              component="img"
-              sx={{ height: 250 }} // Adjust the height of the image
-              image="/AequitasOB.png"
-              alt="Project 1 Thumbnail"
-            />
+            <div style={{ position: "relative", height: 250, width: "100%" }}>
+              <Image
+                src="/AequitasOB.png"
+                alt="Project 1 Thumbnail"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+              />
+            </div>
             <CardContent>
               <Typography variant="h5" gutterBottom>
                 AEQUITAS - Optimizing the Online Banking Experience
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Aequitas is a groundbreaking project designed as part of a
-                bachelor&apos;s thesis to optimize the online banking experience. The
-                platform emphasizes inclusivity, accessibility, and security,
-                offering an equitable digital banking environment for all users,
-                including senior citizens and individuals with disabilities.
-                This thesis-driven project features an accessible user
-                interface, robust security measures leveraging digital
+                bachelor&apos;s thesis to optimize the online banking
+                experience. The platform emphasizes inclusivity, accessibility,
+                and security, offering an equitable digital banking environment
+                for all users, including senior citizens and individuals with
+                disabilities. This thesis-driven project features an accessible
+                user interface, robust security measures leveraging digital
                 signatures, and a Machine Learning ML-powered chatbot to
                 redefine user experience. The project is hosted at{" "}
                 <a href="https://aequitas-thesis.web.app/"> Aequitas</a>.
@@ -137,40 +142,46 @@ const Projects = () => {
 
           {/* Project 2 */}
           <Card sx={{ display: "flex", flexDirection: "column", height: 550 }}>
-            <CardMedia
-              component="img"
-              sx={{ height: 250 }} // Adjust the height of the image
-              image="/Vinnie'sT.png"
-              alt="Project 2 Thumbnail"
-            />
+          <div style={{ position: "relative", height: 250, width: "100%" }}>
+              <Image
+                src="/Vinnie.png"
+                alt="Project 1 Thumbnail"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+              />
+            </div>
             <CardContent>
               <Typography variant="h5" gutterBottom>
                 The Vinnie&apos;s Trattoria Suite
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                The Vinnie&apos;s Trattoria Suite began as a static website project,
-                showcasing the restaurant&apos;s branding through a clean, responsive
-                design. It then evolved into a dynamic platform featuring
-                customer reviews, blogs, and an administration side for
-                efficient content and menu management. Finally, it further
-                expanded into a mobile app with a user-friendly interface for
-                reservation creation/management, ordering system, as well as
-                payment system backed by an SQLite database. This comprehensive
-                suite provides a seamless digital solution for both customers
-                and staff, combining functionality, scalability, and ease of
-                use.
+                The Vinnie&apos;s Trattoria Suite began as a static website
+                project, showcasing the restaurant&apos;s branding through a
+                clean, responsive design. It then evolved into a dynamic
+                platform featuring customer reviews, blogs, and an
+                administration side for efficient content and menu management.
+                Finally, it further expanded into a mobile app with a
+                user-friendly interface for reservation creation/management,
+                ordering system, as well as payment system backed by an SQLite
+                database. This comprehensive suite provides a seamless digital
+                solution for both customers and staff, combining functionality,
+                scalability, and ease of use.
               </Typography>
             </CardContent>
           </Card>
 
           {/* Project 3 */}
           <Card sx={{ display: "flex", flexDirection: "column", height: 550 }}>
-            <CardMedia
-              component="img"
-              sx={{ height: 250 }} // Adjust the height of the image
-              image="/Portfolio.png"
-              alt="Project 3 Thumbnail"
-            />
+          <div style={{ position: "relative", height: 250, width: "100%" }}>
+              <Image
+                src="/Portfolio.png"
+                alt="Project 3 Thumbnail"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+              />
+            </div>
             <CardContent>
               <Typography variant="h5" gutterBottom>
                 This portfolio project
@@ -222,13 +233,13 @@ const Projects = () => {
       <br />
       {/* GitHub Projects Section */}
       <Box sx={{ marginBottom: 4, textAlign: "center" }}>
-        <Typography variant="h3" gutterBottom >
+        <Typography variant="h3" gutterBottom>
           GitHub Projects
         </Typography>
         <Select
           value={sorter}
           onChange={(e) => setSorter(e.target.value)}
-          sx={{ marginBottom: 2}}
+          sx={{ marginBottom: 2 }}
         >
           <MenuItem value="name">Name</MenuItem>
           <MenuItem value="stars">Stars</MenuItem>
@@ -243,7 +254,7 @@ const Projects = () => {
             maxHeight: 600, // Set the max height for the scrollable area
             scrollbarWidth: "none", // Hide scrollbar for Firefox
             msOverflowStyle: "none", // Hide scrollbar for Internet Explorer
-            paddingLeft: 5, 
+            paddingLeft: 5,
           }}
         >
           {loading
