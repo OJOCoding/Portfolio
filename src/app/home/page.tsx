@@ -59,7 +59,7 @@ const Home: React.FC = () => {
         />
         <div className="bg-box"></div>
       </div>
-      <Image className="heart"src="/Portfolio/Heart.png" alt="EYE Illustration" width={300} height={300} />
+      <Image className="heart"src="/Portfolio/EYES.png" alt="EYE Illustration" width={600} height={600} />
       <footer className="footer">
         &copy; 2025 Oni Luca | All Rights Reserved | I honestly don&apos;t know
         what to put here &lt;3
